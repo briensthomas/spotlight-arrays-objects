@@ -54,8 +54,8 @@ export const getSum = (...rest) => {
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
 export const getFirstTwoArgs = (...rest) => {
-  let newArr = [...rest.slice(0, 2), rest.slice(2)]
-  return newArr;
+  let arr = [...rest.slice(0, 2), rest.slice(2)]
+  return arr;
 }
 
 // INPUT: an object with the following structure
@@ -79,7 +79,14 @@ export const getFirstTwoArgs = (...rest) => {
 //    return a NEW object, do not modify the object passed in to the function
 //    use spread operator to create a new object
 
-export const addSneakerCount = () => {}
+export const addSneakerCount = ({ shoes, ...rest}) => {
+  const newObj =
+    {
+      ...rest,
+      sneakerCount: shoes.length,
+    }
+  return newObj;
+}
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed
