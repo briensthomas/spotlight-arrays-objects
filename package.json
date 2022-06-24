@@ -7,6 +7,12 @@
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watchAll"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
